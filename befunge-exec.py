@@ -300,10 +300,10 @@ def execute(m, debug, visual, slow):
                 print("Delta (y,x): " + str(delta))
                 input()
             else:
-                sleep(.2)
+                sleep(.5)
         if slow:
             if visual:
-                sleep(.2)
+                sleep(.5)
         m[y][x] = temp
         if x + delta[1] not in range(0, len(m[y])) or y + delta[0] not in range(0, len(m)):
             delta = [-x for x in delta]
