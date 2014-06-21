@@ -30,10 +30,10 @@ def execute(m, debug, visual, slow):
             y = (y + skipcounter * delta[0]) % len(m)
             x = (x + skipcounter * delta[1]) % len(m[y])
             skipcounter = 0
-        if chr(m[y][x]) == ' ':
+        if chr(m[y][x]) == ' ' or chr(m[y][x]) == 'z':
             if stringmode:
                 push(32)
-            while chr(m[y][x]) == ' ':
+            while chr(m[y][x]) == ' ' or chr(m[y][x]) == 'z':
                 if x + delta[1] not in range(0, len(m[y])) or y + delta[0] not in range(0, len(m)):
                     delta = [-x for x in delta]
                     while x + delta[1] in range(0, len(m[y])) and y + delta[0] in range(0, len(m[y])):
@@ -261,10 +261,11 @@ def execute(m, debug, visual, slow):
                 else:
                     delta[0] = -delta[0]
                     delta[1] = -delta[1]
+            elif chr(m[y][x]) == 'r':
+                delta[0] = -delta[0]
+                delta[1] = -delta[1]
             elif chr(m[y][x]) == '@':
                 break
-            elif chr(m[y][x]) == 'z':
-                True
 
         else:
             if chr(m[y][x]) != '"':
