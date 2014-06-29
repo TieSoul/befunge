@@ -139,7 +139,7 @@ def unload(fingerprint):  # Unload a fingerprint.
 
 def output(x):  # Output something :P
     global outputstring
-    print(x)
+    print(x, end="")
     outputstring += str(x)
 
 
