@@ -445,6 +445,8 @@ def exec(char):  # Execute an instruction.
                 delta = [-i for i in delta]
         elif char == '@':  # Ends the program.
             sys.exit(0)
+        elif char == 'q':  # Exits with a popped return code.
+            sys.exit(pop())
         elif char == 'z':  # 'z' is an explicit no-op.
             True
         elif char == ';':  # Initiates a comment.
