@@ -558,15 +558,7 @@ def execute(file):
             if visual:
                 sleep(.5)
 
-        if x + delta[1] not in range(0, len(m[y])) or y + delta[0] not in range(0, len(m)):  # Wrapping (Lahey-Space)
-            delta = [-x for x in delta]
-            while x + delta[1] in range(0, len(m[y])) and y + delta[0] in range(0, len(m)):
-                x += delta[1]
-                y += delta[0]
-            delta = [-x for x in delta]
-        else:
-            x += delta[1]
-            y += delta[0]
+        x, y = move(x, y)
 
 
 if __name__ == '__main__':
